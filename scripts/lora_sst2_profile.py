@@ -27,7 +27,7 @@ from transformers import (
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", default="distilbert-base-uncased")
-    parser.add_argument("--dataset_name", default="glue")
+    parser.add_argument("--dataset_name", default="nyu-mll/glue")
     parser.add_argument("--dataset_config", default="sst2")
     parser.add_argument("--text_field", default="sentence")
     parser.add_argument("--label_field", default="label")
@@ -152,6 +152,8 @@ def main():
     ensure_dir(run_dir)
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
     raw = load_dataset(args.dataset_name, args.dataset_config)
 
     train_ds = raw["train"].shuffle(seed=args.seed)
@@ -199,7 +201,10 @@ def main():
     base_model = AutoModelForSequenceClassification.from_pretrained(
         args.model_name,
         num_labels=2,
-    ).to(device)
+    )
+    if getattr(base_model.config, "pad_token_id", None) is None:
+        base_model.config.pad_token_id = tokenizer.pad_token_id
+    base_model.to(device)
 
     rows = []
     baseline_metrics = evaluate(
