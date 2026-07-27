@@ -1,0 +1,5 @@
+phase,checkpoint_fraction,global_step,cumulative_train_time_s,estimated_train_energy_j,adapter_size_mb,accuracy,accept_prob,accepted_accuracy,avg_confidence,latency_s_per_sample,eval_samples,checkpoint_dir
+baseline,0.0,0,0.0,0.0,0.0,0.95,1.0,0.95,0.9904957324266433,0.08207902312278748,20,
+lora_checkpoint,0.25,5,1.2822120552882552,432.74656865978613,77.05546474456787,0.95,0.95,1.0,0.9818755090236664,0.055676124477759006,20,results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234354/checkpoint_step_5
+lora_checkpoint,0.5,10,3.7311128890141845,1259.2506000422873,77.05546474456787,0.95,0.95,1.0,0.9750338017940521,0.05573808928020298,20,results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234354/checkpoint_step_10
+lora_checkpoint,1.0,20,7.338606006465852,2476.779527182225,77.05546474456787,1.0,1.0,1.0,0.9979625910520553,0.05592799582518637,20,results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234354/checkpoint_step_20
