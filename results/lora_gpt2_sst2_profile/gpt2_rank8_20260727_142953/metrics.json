@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "model_name": "gpt2",
+    "slm_type": "causal_language_model",
+    "dataset": "nyu-mll/glue/sst2",
+    "task_format": "prompt_next_token_sentiment_classification",
+    "label_tokens": {
+      "negative": 4633,
+      "positive": 3967
+    },
+    "rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "c_attn",
+      "c_proj",
+      "c_fc"
+    ],
+    "epochs": 1,
+    "batch_size": 8,
+    "lr": 0.0002,
+    "max_train_samples": 2000,
+    "max_eval_samples": 872,
+    "confidence_threshold": 0.8,
+    "trainable_params": 1179648,
+    "total_params": 125619456,
+    "trainable_ratio": 0.00939064725769868,
+    "device": "cuda",
+    "peak_gpu_memory_mb": 1306.45068359375,
+    "run_dir": "results/lora_gpt2_sst2_profile/gpt2_rank8_20260727_142953"
+  },
+  "rows": [
+    {
+      "phase": "baseline",
+      "checkpoint_fraction": 0.0,
+      "global_step": 0,
+      "cumulative_train_time_s": 0.0,
+      "estimated_train_energy_j": 0.0,
+      "adapter_size_mb": 0.0,
+      "accuracy": 0.5791284403669725,
+      "accept_prob": 0.21330275229357798,
+      "accepted_accuracy": 0.6505376344086021,
+      "avg_confidence": 0.6851283721967575,
+      "latency_s_per_sample": 0.0009722082476225605,
+      "eval_samples": 872
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.25,
+      "global_step": 62,
+      "cumulative_train_time_s": 3.446370715275407,
+      "estimated_train_energy_j": 646.1945091141388,
+      "adapter_size_mb": 4.511482238769531,
+      "checkpoint_dir": "results/lora_gpt2_sst2_profile/gpt2_rank8_20260727_142953/checkpoint_step_62",
+      "accuracy": 0.5848623853211009,
+      "accept_prob": 0.38073394495412843,
+      "accepted_accuracy": 0.6385542168674698,
+      "avg_confidence": 0.7375101780672686,
+      "latency_s_per_sample": 0.0010386406414108265,
+      "eval_samples": 872
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.5,
+      "global_step": 125,
+      "cumulative_train_time_s": 22.487826822325587,
+      "estimated_train_energy_j": 4216.467529186048,
+      "adapter_size_mb": 4.511482238769531,
+      "checkpoint_dir": "results/lora_gpt2_sst2_profile/gpt2_rank8_20260727_142953/checkpoint_step_125",
+      "accuracy": 0.6077981651376146,
+      "accept_prob": 0.40940366972477066,
+      "accepted_accuracy": 0.6638655462184874,
+      "avg_confidence": 0.7473711858101941,
+      "latency_s_per_sample": 0.000990576811408231,
+      "eval_samples": 872
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 1.0,
+      "global_step": 250,
+      "cumulative_train_time_s": 35.74261304643005,
+      "estimated_train_energy_j": 6701.739946205635,
+      "adapter_size_mb": 4.511482238769531,
+      "checkpoint_dir": "results/lora_gpt2_sst2_profile/gpt2_rank8_20260727_142953/checkpoint_step_250",
+      "accuracy": 0.6123853211009175,
+      "accept_prob": 0.4323394495412844,
+      "accepted_accuracy": 0.6763925729442971,
+      "avg_confidence": 0.74995172297189,
+      "latency_s_per_sample": 0.0010160100122982073,
+      "eval_samples": 872
+    }
+  ]
+}
