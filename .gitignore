@@ -143,3 +143,7 @@ wandb
 # method_comparison logs
 method_comparison/MetaMathQA/cancelled_results/
 method_comparison/MetaMathQA/temporary_results/
+
+# local experiment checkpoints
+results/lora_qwen_agnews_profile/*/checkpoint_step_*/
+results/lora_qwen_sst2_profile/*/checkpoint_step_*/

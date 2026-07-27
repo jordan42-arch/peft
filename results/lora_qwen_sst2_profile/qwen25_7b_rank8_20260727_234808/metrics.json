@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "model_name": "/root/autodl-tmp/models/Qwen2.5-7B-Instruct",
+    "slm_type": "qwen2.5_7b_4bit_qlora",
+    "dataset": "nyu-mll/glue/sst2",
+    "rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "epochs": 1,
+    "batch_size": 1,
+    "grad_accum_steps": 4,
+    "lr": 0.0002,
+    "max_train_samples": 20,
+    "max_eval_samples": 20,
+    "confidence_threshold": 0.8,
+    "label_token_ids": {
+      "0": 8225,
+      "1": 6785
+    },
+    "trainable_params": 20185088,
+    "total_params": 4373157376,
+    "trainable_ratio": 0.00461567839080667,
+    "device": "cuda",
+    "run_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234808",
+    "peak_gpu_memory_mb": 7891.79345703125
+  },
+  "rows": [
+    {
+      "phase": "baseline",
+      "checkpoint_fraction": 0.0,
+      "global_step": 0,
+      "cumulative_train_time_s": 0.0,
+      "estimated_train_energy_j": 0.0,
+      "adapter_size_mb": 0.0,
+      "accuracy": 0.95,
+      "accept_prob": 1.0,
+      "accepted_accuracy": 0.95,
+      "avg_confidence": 0.9904957324266433,
+      "latency_s_per_sample": 0.07508680550381541,
+      "eval_samples": 20
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.25,
+      "global_step": 5,
+      "cumulative_train_time_s": 1.2022563898935914,
+      "estimated_train_energy_j": 405.7615315890871,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234808/checkpoint_step_5",
+      "accuracy": 0.95,
+      "accept_prob": 0.95,
+      "accepted_accuracy": 1.0,
+      "avg_confidence": 0.9818755090236664,
+      "latency_s_per_sample": 0.05472262264229357,
+      "eval_samples": 20
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.5,
+      "global_step": 10,
+      "cumulative_train_time_s": 3.529305027797818,
+      "estimated_train_energy_j": 1191.1404468817636,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234808/checkpoint_step_10",
+      "accuracy": 0.95,
+      "accept_prob": 0.95,
+      "accepted_accuracy": 1.0,
+      "avg_confidence": 0.9750338017940521,
+      "latency_s_per_sample": 0.05447400887496769,
+      "eval_samples": 20
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 1.0,
+      "global_step": 20,
+      "cumulative_train_time_s": 6.95664132013917,
+      "estimated_train_energy_j": 2347.8664455469698,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260727_234808/checkpoint_step_20",
+      "accuracy": 1.0,
+      "accept_prob": 1.0,
+      "accepted_accuracy": 1.0,
+      "avg_confidence": 0.9979625910520553,
+      "latency_s_per_sample": 0.05437556435354054,
+      "eval_samples": 20
+    }
+  ]
+}

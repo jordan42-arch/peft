@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "model_name": "/root/autodl-tmp/models/Qwen2.5-7B-Instruct",
+    "slm_type": "qwen2.5_7b_4bit_qlora",
+    "dataset": "ag_news",
+    "rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "epochs": 1,
+    "batch_size": 1,
+    "grad_accum_steps": 4,
+    "lr": 0.0002,
+    "max_train_samples": 200,
+    "max_eval_samples": 400,
+    "confidence_threshold": 0.9,
+    "label_token_ids": {
+      "0": 4337,
+      "1": 13180,
+      "2": 8025,
+      "3": 11791
+    },
+    "trainable_params": 20185088,
+    "total_params": 4373157376,
+    "trainable_ratio": 0.00461567839080667,
+    "device": "cuda",
+    "run_dir": "results/lora_qwen_agnews_profile/qwen25_7b_rank8_20260728_001955",
+    "peak_gpu_memory_mb": 8050.552734375
+  },
+  "rows": [
+    {
+      "phase": "baseline",
+      "checkpoint_fraction": 0.0,
+      "global_step": 0,
+      "cumulative_train_time_s": 0.0,
+      "estimated_train_energy_j": 0.0,
+      "adapter_size_mb": 0.0,
+      "accuracy": 0.74,
+      "accept_prob": 0.8375,
+      "accepted_accuracy": 0.8059701492537313,
+      "avg_confidence": 0.9497559077292681,
+      "latency_s_per_sample": 0.0548542521474883,
+      "eval_samples": 400
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.25,
+      "global_step": 50,
+      "cumulative_train_time_s": 11.05642344802618,
+      "estimated_train_energy_j": 3731.542913708836,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_agnews_profile/qwen25_7b_rank8_20260728_001955/checkpoint_step_50",
+      "accuracy": 0.4975,
+      "accept_prob": 0.4525,
+      "accepted_accuracy": 0.5911602209944752,
+      "avg_confidence": 0.8315551016479731,
+      "latency_s_per_sample": 0.05368322338210419,
+      "eval_samples": 400
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.5,
+      "global_step": 100,
+      "cumulative_train_time_s": 43.900172144174576,
+      "estimated_train_energy_j": 14816.30809865892,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_agnews_profile/qwen25_7b_rank8_20260728_001955/checkpoint_step_100",
+      "accuracy": 0.875,
+      "accept_prob": 0.61,
+      "accepted_accuracy": 0.9344262295081968,
+      "avg_confidence": 0.8720975814759732,
+      "latency_s_per_sample": 0.05371033609611914,
+      "eval_samples": 400
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 1.0,
+      "global_step": 200,
+      "cumulative_train_time_s": 87.66920319758356,
+      "estimated_train_energy_j": 29588.35607918445,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_agnews_profile/qwen25_7b_rank8_20260728_001955/checkpoint_step_200",
+      "accuracy": 0.785,
+      "accept_prob": 0.6375,
+      "accepted_accuracy": 0.9098039215686274,
+      "avg_confidence": 0.8893048120290041,
+      "latency_s_per_sample": 0.05384905198821798,
+      "eval_samples": 400
+    }
+  ]
+}

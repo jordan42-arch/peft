@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "model_name": "/root/autodl-tmp/models/Qwen2.5-7B-Instruct",
+    "slm_type": "qwen2.5_7b_4bit_qlora",
+    "dataset": "ag_news",
+    "rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "epochs": 1,
+    "batch_size": 1,
+    "grad_accum_steps": 4,
+    "lr": 0.0002,
+    "max_train_samples": 200,
+    "max_eval_samples": 400,
+    "confidence_threshold": 0.8,
+    "label_token_ids": {
+      "0": 8225,
+      "1": 6785
+    },
+    "trainable_params": 20185088,
+    "total_params": 4373157376,
+    "trainable_ratio": 0.00461567839080667,
+    "device": "cuda",
+    "run_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260728_000315",
+    "peak_gpu_memory_mb": 8049.951171875
+  },
+  "rows": [
+    {
+      "phase": "baseline",
+      "checkpoint_fraction": 0.0,
+      "global_step": 0,
+      "cumulative_train_time_s": 0.0,
+      "estimated_train_energy_j": 0.0,
+      "adapter_size_mb": 0.0,
+      "accuracy": 0.39,
+      "accept_prob": 0.905,
+      "accepted_accuracy": 0.39779005524861877,
+      "avg_confidence": 0.9542125883698463,
+      "latency_s_per_sample": 0.05644283205969259,
+      "eval_samples": 400
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.25,
+      "global_step": 50,
+      "cumulative_train_time_s": 11.440695623867214,
+      "estimated_train_energy_j": 3861.2347730551846,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260728_000315/checkpoint_step_50",
+      "accuracy": 0.2575,
+      "accept_prob": 0.515,
+      "accepted_accuracy": 0.3786407766990291,
+      "avg_confidence": 0.7904494133591652,
+      "latency_s_per_sample": 0.05564476704690605,
+      "eval_samples": 400
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 0.5,
+      "global_step": 100,
+      "cumulative_train_time_s": 44.932356148958206,
+      "estimated_train_energy_j": 15164.670200273395,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260728_000315/checkpoint_step_100",
+      "accuracy": 0.2575,
+      "accept_prob": 0.965,
+      "accepted_accuracy": 0.266839378238342,
+      "avg_confidence": 0.931999703347683,
+      "latency_s_per_sample": 0.05548863196978346,
+      "eval_samples": 400
+    },
+    {
+      "phase": "lora_checkpoint",
+      "checkpoint_fraction": 1.0,
+      "global_step": 200,
+      "cumulative_train_time_s": 88.76643449161202,
+      "estimated_train_energy_j": 29958.671640919056,
+      "adapter_size_mb": 77.05546474456787,
+      "checkpoint_dir": "results/lora_qwen_sst2_profile/qwen25_7b_rank8_20260728_000315/checkpoint_step_200",
+      "accuracy": 0.2575,
+      "accept_prob": 0.0775,
+      "accepted_accuracy": 0.22580645161290322,
+      "avg_confidence": 0.7331314164400101,
+      "latency_s_per_sample": 0.05506087658694014,
+      "eval_samples": 400
+    }
+  ]
+}
